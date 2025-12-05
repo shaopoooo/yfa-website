@@ -6,9 +6,9 @@ import Layout from './components/Layout';
 import Home from './pages/Home';
 import Business from './pages/Business';
 import News from './pages/News';
-import Investor from './pages/Investor';
+import Investor from './pages/Investor'; // 已經引入了
 import Contact from './pages/Contact';
-import About from './pages/About'; // <--- 新增這一行
+import About from './pages/About';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -25,12 +25,13 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} /> {/* <--- 新增這一行 */}
+          <Route path="/about" element={<About />} />
           <Route path="/electronics" element={<Business type="electronics" />} />
           <Route path="/opto" element={<Business type="opto" />} />
           <Route path="/biotech" element={<Business type="biotech" />} />
           <Route path="/news" element={<News />} />
-          <Route path="/investor" element={<div className="bg-gray-900 min-h-screen text-white pt-32 text-center">投資人專區建置中...</div>} />
+          {/* 修改這裡：將佔位 div 改為真正的 Investor 組件 */}
+          <Route path="/investor" element={<Investor />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Layout>

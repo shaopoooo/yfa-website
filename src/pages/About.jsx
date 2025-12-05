@@ -1,51 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { History, Target, Award, Flag, Network, Users, ChevronLeft, ChevronRight, Menu } from 'lucide-react';
+import React from 'react';
+import { History, Target, Award, Flag, Network, Users } from 'lucide-react';
 
 const About = () => {
-  // --- 側邊選單邏輯開始 ---
-  const [activeSection, setActiveSection] = useState('');
-  const [isSidebarExpanded, setIsSidebarExpanded] = useState(false); // 修改：預設為 false (收縮狀態)
-
-  // 定義選單項目與對應的 ID
-  const menuItems = [
-    { id: 'intro', label: '關於妍發' },
-    { id: 'org', label: '組織架構' },
-    { id: 'board', label: '董事會成員' },
-    { id: 'milestones', label: '歷史沿革' },
-  ];
-
-  // 處理點擊捲動
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      // 扣除導航列的高度 (約 80px) 與額外緩衝
-      const y = element.getBoundingClientRect().top + window.scrollY - 100;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    }
-  };
-
-  // 監聽捲動以更新作用中項目
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { rootMargin: '-20% 0px -50% 0px' }
-    );
-
-    menuItems.forEach((item) => {
-      const element = document.getElementById(item.id);
-      if (element) observer.observe(element);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-  // --- 側邊選單邏輯結束 ---
-
   // 資料來源
   const milestones = [
     { 
@@ -140,57 +96,7 @@ const About = () => {
   return (
     <div className="bg-slate-50 min-h-screen text-slate-800 overflow-x-hidden relative">
       
-      {/* 側邊導覽選單 (優化按鈕樣式) */}
-      <div 
-        className={`fixed left-4 top-28 hidden md:flex flex-col gap-2 z-[100] bg-white/95 backdrop-blur-xl p-2 rounded-2xl border border-slate-200/80 shadow-2xl transition-all duration-500 ease-spring ${
-          isSidebarExpanded ? 'w-48' : 'w-16'
-        }`}
-      >
-        {/* 縮放切換按鈕 - 圓形浮動風格 */}
-        <div className="flex justify-end px-1 mb-2">
-            <button 
-            onClick={() => setIsSidebarExpanded(!isSidebarExpanded)}
-            className="w-8 h-8 flex items-center justify-center rounded-full bg-slate-50 border border-slate-200 text-slate-400 hover:text-blue-600 hover:border-blue-200 hover:bg-blue-50 transition-all duration-300 shadow-sm mx-auto"
-            title={isSidebarExpanded ? "收起選單" : "展開選單"}
-            >
-            {isSidebarExpanded ? <ChevronLeft size={16} /> : <Menu size={16} />}
-            </button>
-        </div>
-
-        {/* 選單項目 */}
-        {menuItems.map((item) => (
-          <button
-            key={item.id}
-            onClick={() => scrollToSection(item.id)}
-            className={`group flex items-center p-2 rounded-xl transition-all duration-300 relative overflow-hidden ${
-              activeSection === item.id 
-                ? 'bg-blue-50 text-blue-700' 
-                : 'text-slate-500 hover:bg-slate-50 hover:text-slate-900'
-            } ${isSidebarExpanded ? 'justify-start gap-3 px-3' : 'justify-center'}`}
-          >
-            {/* 作用中指標線 (僅展開時顯示) */}
-            {activeSection === item.id && isSidebarExpanded && (
-                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-blue-500 rounded-r-full"></div>
-            )}
-
-            {/* 指示點 */}
-            <div className={`w-2.5 h-2.5 rounded-full transition-all duration-300 flex-shrink-0 border-2 ${
-              activeSection === item.id 
-                ? 'bg-blue-600 border-blue-600 scale-110' 
-                : 'bg-transparent border-slate-300 group-hover:border-slate-400'
-            }`}></div>
-
-            {/* 文字標籤 */}
-            <span className={`text-sm font-medium transition-all duration-500 whitespace-nowrap overflow-hidden ${
-              isSidebarExpanded ? 'opacity-100 max-w-[10rem] translate-x-0' : 'opacity-0 max-w-0 -translate-x-4'
-            }`}>
-              {item.label}
-            </span>
-          </button>
-        ))}
-      </div>
-
-      {/* 1. Header Hero - 增加 md:px-24 左右縮減寬度 */}
+      {/* 1. Header Hero - 保持 padding 避免遮擋 */}
       <div className="relative pt-24 pb-32 px-4 md:px-24 text-center overflow-hidden bg-white border-b border-slate-200">
         <div className="absolute inset-0 bg-gradient-to-b from-blue-50 to-transparent pointer-events-none"></div>
         <div className="relative z-10">
@@ -205,7 +111,7 @@ const About = () => {
         </div>
       </div>
 
-      {/* 2. 詳細介紹 (企業故事) - ID: intro, 增加 md:px-24 */}
+      {/* 2. 詳細介紹 (企業故事) - ID: intro */}
       <div id="intro" className="max-w-5xl mx-auto px-4 md:px-24 -mt-16 mb-24 relative z-20">
         <div className="bg-white border border-slate-200 rounded-2xl p-8 md:p-12 shadow-xl">
           <h2 className="text-3xl font-bold text-slate-900 mb-8 border-l-4 border-blue-600 pl-4 flex items-baseline flex-wrap gap-3">
@@ -242,7 +148,7 @@ const About = () => {
         </div>
       </div>
 
-      {/* 2.5 組織架構 (圖表) - ID: org, 增加 md:px-24 */}
+      {/* 2.5 組織架構 (圖表) - ID: org */}
       <div id="org" className="max-w-6xl mx-auto px-4 md:px-24 mb-24">
         <div className="text-center mb-12">
            <div className="inline-flex items-center justify-center p-3 bg-blue-100 rounded-full mb-4">

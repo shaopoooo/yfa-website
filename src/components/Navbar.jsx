@@ -1,6 +1,8 @@
+// src/components/Navbar.jsx
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import logo from '../assets/logo.svg'; // 1. 引入 Logo 檔案
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +18,7 @@ const Navbar = () => {
   const navLinks = [
     { name: '關於妍發', path: '/about' },
     { name: '電子事業', path: '/electronics' },
-    { name: '光電事業', path: '/opto' },
+    { name: 'IC解決方案', path: '/opto' },
     { name: '生技農業', path: '/biotech' },
     { name: '聯絡我們', path: '/contact' },
   ];
@@ -31,8 +33,14 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           
           <Link to="/" className="text-2xl font-black tracking-tighter text-slate-800 flex items-center gap-2 group">
-            <div className="w-8 h-8 bg-gradient-to-tr from-blue-600 to-blue-400 rounded-lg shadow-lg group-hover:scale-110 transition duration-300"></div>
-            Y-FA<span className="font-light text-slate-500">TECH</span>
+            {/* 2. 替換原本的 div 色塊，改為 img */}
+            <img 
+              src={logo} 
+              alt="Y-FA Tech Logo" 
+              className="w-10 h-10 group-hover:scale-110 transition duration-300" 
+            />
+            {/* 保留文字，若您的 SVG 已經包含文字，可以將下方這行刪除 */}
+            <span>Y-FA</span>
           </Link>
           
           {/* Desktop */}

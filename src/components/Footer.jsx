@@ -1,6 +1,15 @@
+// src/components/Footer.jsx
 import React from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
-import { companyInfo } from '../data/mockData'; 
+
+const companyInfo = {
+  name: "妍發科技股份有限公司",
+  nameEn: "Y-FA Technology INC.",
+  address: "桃園市蘆竹區蘆竹街131巷2號",
+  phone: "03-352-9818",
+  email: "service@yfa.com.tw",
+  mapUrl: "https://www.google.com/maps?q=桃園市蘆竹區蘆竹街131巷2號"
+};
 
 const Footer = () => {
   return (
@@ -13,7 +22,7 @@ const Footer = () => {
              {companyInfo.name}
           </h3>
           <p className="text-sm leading-relaxed mb-6 text-slate-400">
-            專注於軟性電路板(FPC)、RFID應用與科技農業植物工廠。<br/>
+            專注於軟性電路板(FPC)、IC 設計解決方案與科技農業植物工廠。<br/>
             以「穩健、創新、責任」為經營理念，持續為客戶創造價值。
           </p>
         </div>
@@ -22,8 +31,9 @@ const Footer = () => {
         <div>
           <h3 className="text-white text-lg font-bold mb-6">快速連結</h3>
           <ul className="space-y-3 text-sm">
-            <li><a href="/electronics" className="hover:text-blue-400 transition flex items-center gap-2"><span className="w-1 h-1 bg-slate-500 rounded-full"></span>電子事業 FPC & RFID</a></li>
-            <li><a href="/opto" className="hover:text-blue-400 transition flex items-center gap-2"><span className="w-1 h-1 bg-slate-500 rounded-full"></span>光電事業 Opto-Electronics</a></li>
+            <li><a href="/electronics" className="hover:text-blue-400 transition flex items-center gap-2"><span className="w-1 h-1 bg-slate-500 rounded-full"></span>電子事業 Electronics</a></li>
+            {/* 修改名稱：光電事業 -> IC解決方案 */}
+            <li><a href="/opto" className="hover:text-blue-400 transition flex items-center gap-2"><span className="w-1 h-1 bg-slate-500 rounded-full"></span>IC解決方案 IC Solutions</a></li>
             <li><a href="/biotech" className="hover:text-blue-400 transition flex items-center gap-2"><span className="w-1 h-1 bg-slate-500 rounded-full"></span>生技農業 Bio-Agriculture</a></li>
             <li><a href="/investor" className="hover:text-blue-400 transition flex items-center gap-2"><span className="w-1 h-1 bg-slate-500 rounded-full"></span>投資人專區 Investor Relations</a></li>
           </ul>
@@ -53,7 +63,7 @@ const Footer = () => {
       
       <div className="border-t border-slate-800 pt-8 text-center">
         <p className="text-xs text-slate-500">
-            &copy; {new Date().getFullYear()} {companyInfo.nameEn} All Rights Reserved.
+            © {new Date().getFullYear()} {companyInfo.nameEn} All Rights Reserved.
         </p>
       </div>
     </footer>

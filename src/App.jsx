@@ -4,11 +4,14 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { useEffect } from 'react';
 import Layout from './components/Layout';
 import Home from './pages/Home';
-import Business from './pages/Business';
+// import Business from './pages/Business'; // Business 元件現在已無路由使用，可視情況移除
 import News from './pages/News';
-import Investor from './pages/Investor'; // 已經引入了
+import Investor from './pages/Investor'; 
 import Contact from './pages/Contact';
 import About from './pages/About';
+import Electronics from './pages/Electronics';
+import Opto from './pages/Opto';
+import Biotech from './pages/Biotech'; // 1. 引入 Biotech
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -26,11 +29,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/electronics" element={<Business type="electronics" />} />
-          <Route path="/opto" element={<Business type="opto" />} />
-          <Route path="/biotech" element={<Business type="biotech" />} />
+          <Route path="/electronics" element={<Electronics />} />
+          <Route path="/opto" element={<Opto />} />
+          <Route path="/biotech" element={<Biotech />} />
           <Route path="/news" element={<News />} />
-          {/* 修改這裡：將佔位 div 改為真正的 Investor 組件 */}
           <Route path="/investor" element={<Investor />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

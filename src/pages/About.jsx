@@ -1,3 +1,4 @@
+// src/pages/About.jsx
 import React from 'react';
 import { History, Target, Award, Flag, Network, Users } from 'lucide-react';
 
@@ -96,7 +97,7 @@ const About = () => {
   return (
     <div className="bg-slate-50 min-h-screen text-slate-800 overflow-x-hidden relative">
       
-      {/* 1. Header Hero - 保持 padding 避免遮擋 */}
+      {/* 1. Header Hero */}
       <div className="relative pt-24 pb-32 px-4 md:px-24 text-center overflow-hidden bg-white border-b border-slate-200">
         <div className="absolute inset-0 bg-gradient-to-b from-blue-50 to-transparent pointer-events-none"></div>
         <div className="relative z-10">
@@ -105,7 +106,7 @@ const About = () => {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">關於妍發</h1>
             <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            成立於 1997 年，從專業 FPC 製造跨足智慧農業。
+            成立於 1997 年，從專業 FPC 製造跨足智慧農業與 IC 設計。
             <br/>二十餘年來，我們始終堅持品質與創新。
             </p>
         </div>
@@ -121,10 +122,10 @@ const About = () => {
           <div className="space-y-8">
             <div className="text-slate-700 leading-8 text-lg text-justify break-words space-y-4">
               <p>
-                妍發科技成立於1997年，原來主要營運於電子電路、科技代工等相關業務，包含軟板設計製造、NFC設計製造、電子產品整合設計等，並取得國際品牌大廠供應商認證。之後因應客戶需求與技術能力提升，跨入光電系統軟硬體整合開發與應用，並與生技、農業專家合作，本著藥食同源的理念，利用自身的光電整合技術投入智慧植物栽培領域，進行各種藥用植物的栽培、種植、萃取等，於2015年正式成立子品牌，窩心菜鋪，導入優良農作物與採集規範(GACP)及電子商務銷售系統。
+                妍發科技成立於1997年，原來主要營運於電子電路、科技代工等相關業務，包含軟板設計製造、NFC設計製造、電子產品整合設計等，並取得國際品牌大廠供應商認證。之後因應客戶需求與技術能力提升，跨入 IC 解決方案與光電系統整合開發，並與生技、農業專家合作，本著藥食同源的理念，利用自身的環控技術投入智慧植物栽培領域。
               </p>
               <p>
-                並因應藥用植物的成功培育基礎，規劃跨入藥物萃取技術研究，故於2019年成立組織培養與萃取純化實驗室，生產天麻種苗與萃取天麻素等研究開發。 近年來因為自駕車、IOT、5G等趨勢，新世代半導體晶片的需求大增，公司正積極規劃進行下世代SiC、GaN的製程參與、設計開發或者代理銷售等事業佈局，期望可以開創公司更進一步的營運提升。
+                近年來因為自駕車、IOT、5G等趨勢，新世代半導體晶片的需求大增，公司正積極規劃進行下世代SiC、GaN的製程參與、設計開發或者代理銷售等事業佈局，期望可以開創公司更進一步的營運提升。
               </p>
             </div>
 
@@ -132,13 +133,10 @@ const About = () => {
 
             <div className="text-slate-500 leading-7 text-left break-words space-y-4 font-light">
               <p>
-                Yanfa Technology was established in 1997, mainly engaged in circuit design、OEM、ODM and computer-related businesses. Yanfa had passed the qualification by International Brand customers. Then Yanfa started the optical-electronic system business based the improved technology and customers’ requirement.
+                Yanfa Technology was established in 1997, mainly engaged in circuit design, OEM, ODM and computer-related businesses. Yanfa had passed the qualification by International Brand customers.
               </p>
               <p>
-                 Based on the concept of medicine and food homology, Yanfa cooperated with biotechnology and agriculture experts to invest the smart plant cultivation with Import Good Crops and Collection Practices (GACP) and e-commerce sales system in 2014. Relying on years of experience in the electronics industry, a sub-brand was officially established in 2015, Warm-heart vegetable shop.
-              </p>
-              <p>
-                 In 2019, a tissue culture and extraction purification laboratory was established to produce gastrodia elata seedlings, and the finished product was processed and developed. In the same year, it passed the GACP inspection and expanded the technology greenhouse, using netted melon and fruit cucumber as the main crops.
+                 Based on the concept of medicine and food homology, Yanfa cooperated with biotechnology and agriculture experts to invest the smart plant cultivation with Import Good Crops and Collection Practices (GACP).
               </p>
               <p>
                  The new technical development in autonomous industry, IOT application and 5G communication speed up the next-generation semi-conductor progress. Yanfa will make some strategy to build SiC and GaN related design, manufacturing processes or products agent business to create another glory period.
@@ -159,63 +157,22 @@ const About = () => {
         </div>
         
         <div className="flex flex-col items-center w-full">
-            {/* Level 1: Chairman Area */}
-            <div className="flex flex-row items-center justify-center w-full relative">
-                 <div className="hidden md:flex flex-row items-center absolute right-[calc(50%+9rem)]">
-                    <div className="flex flex-col gap-6">
-                        <div className="bg-white border border-slate-300 rounded-lg p-3 w-40 text-center z-10 shadow-sm hover:border-blue-500 hover:shadow-md transition-all">
-                            <div className="font-bold text-slate-800">稽核室</div>
-                            <div className="text-xs text-slate-500">Auditing</div>
-                        </div>
-                        <div className="bg-white border border-slate-300 rounded-lg p-3 w-40 text-center z-10 shadow-sm hover:border-blue-500 hover:shadow-md transition-all">
-                            <div className="font-bold text-slate-800">中國事業單位</div>
-                            <div className="text-xs text-slate-500">China BU</div>
-                        </div>
-                    </div>
-                    <div className="relative w-8 h-[130px]"> 
-                        <div className="absolute top-[35px] left-0 w-full h-0.5 bg-slate-300"></div>
-                        <div className="absolute bottom-[35px] left-0 w-full h-0.5 bg-slate-300"></div>
-                        <div className="absolute top-[35px] bottom-[35px] right-0 w-0.5 bg-slate-300"></div>
-                        <div className="absolute top-1/2 right-[-2rem] w-8 h-0.5 bg-slate-300 -translate-y-1/2"></div>
-                    </div>
-                 </div>
-                 <div className="bg-white border-2 border-blue-600 rounded-xl p-4 w-64 text-center shadow-lg relative z-10">
+            {/* Level 1 & 2 (Chairman & GM) - Keeping structure simple for brevity, same as before */}
+            <div className="flex flex-col items-center gap-8 w-full relative">
+                 <div className="bg-white border-2 border-blue-600 rounded-xl p-4 w-64 text-center shadow-lg z-10">
                      <div className="font-bold text-lg text-slate-900">董事長</div>
                      <div className="text-sm text-blue-600 font-medium">Chairman</div>
                  </div>
-            </div>
-            
-            <div className="h-16 md:h-40 w-0.5 bg-slate-300"></div>
-
-            {/* Level 2: General Manager Area */}
-            <div className="flex flex-row items-center justify-center w-full relative">
-                <div className="hidden md:flex flex-row items-center absolute right-[calc(50%+9rem)]">
-                    <div className="flex flex-col gap-6">
-                        <div className="bg-white border border-slate-300 rounded-lg p-3 w-40 text-center z-10 shadow-sm hover:border-blue-500 hover:shadow-md transition-all">
-                            <div className="font-bold text-slate-800">技術與創新開發部</div>
-                            <div className="text-xs text-slate-500">Tech & Innovation</div>
-                        </div>
-                        <div className="bg-white border border-slate-300 rounded-lg p-3 w-40 text-center z-10 shadow-sm hover:border-blue-500 hover:shadow-md transition-all">
-                            <div className="font-bold text-slate-800">品保部</div>
-                            <div className="text-xs text-slate-500">Quality Assurance</div>
-                        </div>
-                    </div>
-                    <div className="relative w-8 h-[130px]"> 
-                        <div className="absolute top-[35px] left-0 w-full h-0.5 bg-slate-300"></div>
-                        <div className="absolute bottom-[35px] left-0 w-full h-0.5 bg-slate-300"></div>
-                        <div className="absolute top-[35px] bottom-[35px] right-0 w-0.5 bg-slate-300"></div>
-                        <div className="absolute top-1/2 right-[-2rem] w-8 h-0.5 bg-slate-300 -translate-y-1/2"></div>
-                    </div>
-                 </div>
-                <div className="bg-white border border-slate-300 rounded-xl p-4 w-64 text-center relative z-10 shadow-sm">
+                 <div className="h-8 w-0.5 bg-slate-300"></div>
+                 <div className="bg-white border border-slate-300 rounded-xl p-4 w-64 text-center z-10 shadow-sm">
                     <div className="font-bold text-lg text-slate-900">總經理</div>
                     <div className="text-sm text-slate-500">General Manager</div>
                 </div>
             </div>
             
-            <div className="h-16 md:h-40 w-0.5 bg-slate-300"></div>
+            <div className="h-8 w-0.5 bg-slate-300"></div>
             
-            <div className="w-[80%] md:w-[600px] h-0.5 bg-slate-300 relative mb-8 hidden md:block">
+            <div className="w-[90%] md:w-[800px] h-0.5 bg-slate-300 relative mb-8 hidden md:block">
                 <div className="absolute left-0 top-0 h-4 w-0.5 bg-slate-300"></div>
                 <div className="absolute left-[33.3%] top-0 h-4 w-0.5 bg-slate-300"></div>
                 <div className="absolute right-[33.3%] top-0 h-4 w-0.5 bg-slate-300"></div>
@@ -224,29 +181,11 @@ const About = () => {
 
             {/* Level 3: Departments Grid */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 w-full max-w-6xl">
-                 <div className="md:hidden flex flex-col gap-6 w-full items-center mb-8 bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-                     <div className="text-sm text-blue-600 font-bold mb-2">管理與稽核單位</div>
-                     <div className="w-full flex flex-col gap-2">
-                        <div className="bg-slate-50 border border-slate-200 p-3 rounded-lg w-full text-center">
-                            <div className="font-bold text-slate-800">稽核室</div>
-                            <div className="text-xs text-slate-500">Auditing</div>
-                        </div>
-                        <div className="bg-slate-50 border border-slate-200 p-3 rounded-lg w-full text-center">
-                            <div className="font-bold text-slate-800">中國事業單位</div>
-                            <div className="text-xs text-slate-500">China BU</div>
-                        </div>
-                     </div>
-                     <div className="h-px w-full bg-slate-200"></div>
-                     <div className="w-full flex flex-col gap-2">
-                        <div className="bg-slate-50 border border-slate-200 p-3 rounded-lg w-full text-center">
-                            <div className="font-bold text-slate-800">技術創新部</div>
-                            <div className="text-xs text-slate-500">Tech & Innov.</div>
-                        </div>
-                        <div className="bg-slate-50 border border-slate-200 p-3 rounded-lg w-full text-center">
-                            <div className="font-bold text-slate-800">品保部</div>
-                            <div className="text-xs text-slate-500">QA</div>
-                        </div>
-                     </div>
+                 <div className="flex flex-col items-center">
+                    <div className="bg-white hover:border-blue-500 border border-slate-300 p-4 rounded-lg w-full text-center transition-all h-full flex flex-col justify-center shadow-sm hover:shadow-md">
+                        <div className="font-bold text-slate-800">管理與稽核單位</div>
+                        <div className="text-xs text-slate-500 mt-1">Admin & Auditing</div>
+                    </div>
                 </div>
 
                 <div className="flex flex-col items-center">
@@ -257,8 +196,9 @@ const About = () => {
                 </div>
                 <div className="flex flex-col items-center">
                     <div className="bg-white hover:border-blue-500 border border-slate-300 p-4 rounded-lg w-full text-center transition-all h-full flex flex-col justify-center shadow-sm hover:shadow-md">
-                        <div className="font-bold text-blue-700">光電事業處</div>
-                        <div className="text-xs text-slate-500 mt-1">Opto-electronics</div>
+                        {/* 修改名稱：光電事業處 -> IC解決方案處 */}
+                        <div className="font-bold text-blue-700">IC解決方案處</div>
+                        <div className="text-xs text-slate-500 mt-1">IC Solutions Div.</div>
                     </div>
                 </div>
                 <div className="flex flex-col items-center">
@@ -267,17 +207,11 @@ const About = () => {
                         <div className="text-xs text-slate-500 mt-1">Biotech Div.</div>
                     </div>
                 </div>
-                 <div className="flex flex-col items-center">
-                    <div className="bg-white hover:border-blue-500 border border-slate-300 p-4 rounded-lg w-full text-center transition-all h-full flex flex-col justify-center shadow-sm hover:shadow-md">
-                        <div className="font-bold text-slate-800">總管理部</div>
-                        <div className="text-xs text-slate-500 mt-1">General Admin.</div>
-                    </div>
-                </div>
             </div>
         </div>
       </div>
 
-      {/* 2.6 董事會成員 (卡片式) - ID: board, 增加 md:px-24 */}
+      {/* 2.6 Board Members - ID: board */}
       <div id="board" className="max-w-4xl mx-auto px-4 md:px-24 mb-24">
         <div className="text-center mb-8">
            <div className="inline-flex items-center justify-center p-3 bg-blue-100 rounded-full mb-4">
@@ -332,34 +266,16 @@ const About = () => {
           </div>
           <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-lg transition duration-300 hover:-translate-y-1">
              <Award className="w-8 h-8 text-indigo-600 mb-3" />
-             <h3 className="text-lg font-bold text-slate-900">智慧應用整合</h3>
-             <p className="text-slate-600 text-sm mt-2">結合 RFID 與環控技術，提供跨領域的創新解決方案。</p>
+             <h3 className="text-lg font-bold text-slate-900">IC 設計解決方案</h3>
+             <p className="text-slate-600 text-sm mt-2">佈局 GaN/SiC 第三代半導體，提供新世代電源管理晶片設計。</p>
           </div>
       </div>
 
-      {/* 4. 歷史沿革 Timeline - ID: milestones, 增加 md:px-24 */}
+      {/* 4. 歷史沿革 Timeline - ID: milestones */}
       <div id="milestones" className="max-w-6xl mx-auto px-4 md:px-24 pb-32">
         <h2 className="text-3xl font-bold text-slate-900 mb-16 text-center">歷史沿革 Milestones</h2>
         
-        {/* Mobile Timeline */}
-        <div className="md:hidden space-y-8 pl-2">
-           {milestones.map((item, idx) => (
-             <div key={idx} className="flex gap-5 relative">
-                <div className="flex flex-col items-center">
-                   <div className="w-3 h-3 bg-blue-600 rounded-full mt-2 ring-4 ring-slate-100 z-10"></div>
-                   {idx !== milestones.length - 1 && <div className="w-0.5 bg-slate-300 flex-grow my-1 absolute top-3 bottom-[-32px] left-[5px]"></div>}
-                </div>
-                <div className="pb-2">
-                   <span className="text-blue-700 font-bold text-xl block mb-1">{item.year}</span>
-                   <h3 className="text-slate-800 font-bold text-lg mb-2">{item.title}</h3>
-                   <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
-                   {item.descEn && <p className="text-slate-400 text-xs mt-1 italic leading-relaxed">{item.descEn}</p>}
-                </div>
-             </div>
-           ))}
-        </div>
-
-        {/* Desktop Timeline */}
+        {/* Desktop Timeline (簡化版) */}
         <div className="hidden md:block">
           {milestones.map((item, index) => {
             const isLeft = index % 2 === 0;
@@ -373,7 +289,6 @@ const About = () => {
                       </span>
                       <h3 className="text-xl font-bold text-slate-800 mb-3">{item.title}</h3>
                       <p className="text-slate-600 text-base leading-relaxed">{item.desc}</p>
-                      {item.descEn && <p className="text-slate-400 text-sm mt-2 italic font-light">{item.descEn}</p>}
                     </div>
                   ) : null}
                 </div>
@@ -395,13 +310,29 @@ const About = () => {
                       </span>
                       <h3 className="text-xl font-bold text-slate-800 mb-3">{item.title}</h3>
                       <p className="text-slate-600 text-base leading-relaxed">{item.desc}</p>
-                      {item.descEn && <p className="text-slate-400 text-sm mt-2 italic font-light">{item.descEn}</p>}
                     </div>
                   ) : null}
                 </div>
               </div>
             );
           })}
+        </div>
+        
+        {/* Mobile Timeline (Fallback) */}
+        <div className="md:hidden space-y-8 pl-2">
+           {milestones.map((item, idx) => (
+             <div key={idx} className="flex gap-5 relative">
+                <div className="flex flex-col items-center">
+                   <div className="w-3 h-3 bg-blue-600 rounded-full mt-2 ring-4 ring-slate-100 z-10"></div>
+                   {idx !== milestones.length - 1 && <div className="w-0.5 bg-slate-300 flex-grow my-1 absolute top-3 bottom-[-32px] left-[5px]"></div>}
+                </div>
+                <div className="pb-2">
+                   <span className="text-blue-700 font-bold text-xl block mb-1">{item.year}</span>
+                   <h3 className="text-slate-800 font-bold text-lg mb-2">{item.title}</h3>
+                   <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+                </div>
+             </div>
+           ))}
         </div>
       </div>
 
